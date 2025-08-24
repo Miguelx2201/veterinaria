@@ -5,7 +5,7 @@ import model.Veterinary;
 
 import java.util.Arrays;
 
-public class Aplicacion {
+public class App {
     public static void main(String[] args) {
         Veterinary veterinary1 = new Veterinary("Calle 23 #23-28", "Peludos el Berlin", "1091885531");
         System.out.println(veterinary1.getListPets().toString());

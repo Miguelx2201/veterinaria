@@ -97,8 +97,7 @@ public class Pet {
                 ", age=" + age +
                 ", color='" + color + '\'' +
                 ", weight=" + weight +
-                ", diseases=" + Arrays.toString(listDiseases) +
-                '}';
+                ", diseases=" + Arrays.toString(listDiseases) + '}';
     }
 
     /**

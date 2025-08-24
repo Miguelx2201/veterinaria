@@ -106,11 +106,16 @@ public class Veterinary {
         return foundPet;
     }
 
-    /*public String updatePet(String id, Pet pet) {
+    public String updatePet(String id, Pet pet) {
         String result = "";
         Pet foundedPet = searchPet(id);
         if(foundedPet != null) {
-
+            listPets.remove(foundedPet);
+            listPets.add(pet);
+            result = "La mascota ha sido actualizada exitosamente.";
+        } else {
+            result = "La mascota no ha sido encontrada.";
         }
-    }*/
+        return result;
+    }
 }
