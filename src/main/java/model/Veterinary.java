@@ -76,12 +76,12 @@ public class Veterinary {
 
     /**
      * Metodo que elimina una mascota de la lista de mascotas.
-     * @param pet
+     * @param id
      * @return
      */
-    public String removePet(Pet pet) {
+    public String removePet(String id) {
         String result = "";
-        Pet foundPet = searchPet(pet.getId());
+        Pet foundPet = searchPet(id);
         if(foundPet != null) {
             listPets.remove(foundPet);
             result = "La mascota ha sido eliminada exitosamente.";
