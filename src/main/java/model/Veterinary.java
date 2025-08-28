@@ -49,12 +49,7 @@ public class Veterinary {
 
     @Override
     public String toString() {
-        return "Veterinary{" +
-                "location='" + location + '\'' +
-                ", name='" + name + '\'' +
-                ", nit='" + nit + '\'' +
-                ", listPets=" + listPets +
-                '}';
+        return "Veterinaria:\nNombre:"+name+"\nNit:"+nit+"\nLocation:"+location+"\nMascotas:"+listPets.toString();
     }
 
     /**

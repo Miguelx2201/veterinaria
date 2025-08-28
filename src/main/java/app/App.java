@@ -22,7 +22,8 @@ public class App {
                     2. Eliminar mascota.
                     3. Buscar mascota.
                     4. Actualizar mascota.
-                    5. Salir del sistema
+                    5. Visualizar la información de la veterinaria.
+                    6. Salir del sistema.
                     """);
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la opcion que desea relizar: "));
             switch (opcion) {
@@ -79,7 +80,8 @@ public class App {
                     }
                     veterinary.updatePet(idUpdate, pet);
                 }
-                case 5 -> salir = true;
+                case 5 -> System.out.println(veterinary.toString());
+                case 6 -> salir = true;
                 default -> JOptionPane.showMessageDialog(null, "Ingrese una opcion valida.");
             }
         }
