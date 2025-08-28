@@ -89,15 +89,15 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "Pet{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", species='" + species + '\'' +
-                ", breed='" + breed + '\'' +
-                ", age=" + age +
-                ", color='" + color + '\'' +
-                ", weight=" + weight +
-                ", diseases=" + Arrays.toString(listDiseases) + '}';
+        return "Pet" +
+                "\nID: " + id +
+                "\nName: " + name +
+                "\nSpecies: " + species +
+                "\nBreed: " + breed +
+                "\nAge: " + age +
+                "\nColor: " + color +
+                "\nWeight: " + weight +
+                "\nDiseases: " + Arrays.toString(listDiseases);
     }
 
     /**

@@ -5,12 +5,16 @@ import java.util.ArrayList;
 public class Veterinary {
     private String location;
     private String name;
+    private String phone;
+    private String email;
     private String nit;
     private ArrayList<Pet> listPets;
 
-    public Veterinary(String ubicacion, String nombre, String nit) {
-        this.location = ubicacion;
-        this.name = nombre;
+    public Veterinary(String location, String name, String phone, String email, String nit) {
+        this.location = location;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
         this.nit = nit;
         this.listPets = new ArrayList<>();
     }
@@ -47,9 +51,26 @@ public class Veterinary {
         this.listPets = listPets;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
-        return "Veterinaria:\nNombre:"+name+"\nNit:"+nit+"\nLocation:"+location+"\nMascotas:"+listPets.toString();
+        return "\nVeterinaria:\nNombre:"+name+"\nNit:"+nit+"\nLocation:"+location+"\nPhone:"+phone+"\nEmail:"+email+
+                "\nMascotas:"+listPets.toString()+"\n";
     }
 
     /**

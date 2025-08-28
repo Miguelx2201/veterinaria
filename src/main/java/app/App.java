@@ -9,7 +9,7 @@ import javax.swing.*;
 
 public class App {
     public static void main(String[] args) {
-        Veterinary veterinary = new Veterinary("Calle 29", "Amigos peludos", "1091");
+        Veterinary veterinary = new Veterinary("Calle 29", "Amigos peludos", "320", "amigospeludos@gmail.com", "1091");
         boolean salir = false;
         int opcion;
         while (!salir) {
@@ -80,7 +80,7 @@ public class App {
                     }
                     veterinary.updatePet(idUpdate, pet);
                 }
-                case 5 -> System.out.println(veterinary.toString());
+                case 5 -> JOptionPane.showMessageDialog(null, veterinary.toString());
                 case 6 -> salir = true;
                 default -> JOptionPane.showMessageDialog(null, "Ingrese una opcion valida.");
             }
