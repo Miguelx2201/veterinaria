@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="819.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.ControllerPet">
+   <children>
+      <TabPane layoutY="1.0" prefHeight="476.0" prefWidth="819.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="pestañaCitas" text="Citas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="16.0" layoutY="16.0" prefHeight="421.0" prefWidth="790.0">
+                           <children>
+                              <TableView fx:id="tablaCitas" prefHeight="283.0" prefWidth="790.0">
+                                <columns>
+                                  <TableColumn fx:id="mascotaDeCita" prefWidth="90.0" text="Mascota" />
+                                  <TableColumn fx:id="fechaDeCita" prefWidth="70.0" text="Fecha" />
+                                    <TableColumn fx:id="horaDeCita" prefWidth="65.0" text="Hora" />
+                                    <TableColumn fx:id="veterinarioDeCita" prefWidth="141.0" text="Veterinario" />
+                                    <TableColumn fx:id="observacionesDeCita" prefWidth="290.0" text="Observaciones" />
+                                    <TableColumn fx:id="estadoDeCita" prefWidth="133.0" text="Estado" />
+                                </columns>
+                              </TableView>
+                              <Pane prefHeight="237.0" prefWidth="790.0">
+                                 <children>
+                                    <Button fx:id="botonAñadirCita" layoutX="77.0" layoutY="82.0" mnemonicParsing="false" text="Añadir nueva cita" />
+                                    <Button fx:id="botonEliminarCita" layoutX="297.0" layoutY="82.0" mnemonicParsing="false" text="Eliminar cita" />
+                                    <Button fx:id="botonActualizarCita" layoutX="481.0" layoutY="82.0" mnemonicParsing="false" text="Actualizar cita" />
+                                    <Button fx:id="botonBuscarCita" layoutX="642.0" layoutY="82.0" mnemonicParsing="false" text="Buscar cita" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="pestañaMascotas" text="Mascotas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="411.0" prefWidth="787.0">
+                           <children>
+                              <TableView prefHeight="200.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn fx:id="nombreMascotas" prefWidth="112.0" text="Nombre" />
+                                  <TableColumn fx:id="especieMascotas" prefWidth="100.0" text="Especie" />
+                                    <TableColumn fx:id="razaMascotas" prefWidth="89.0" text="Raza" />
+                                    <TableColumn fx:id="edadMascotas" prefWidth="57.0" text="Edad" />
+                                    <TableColumn fx:id="colorMascotas" prefWidth="71.0" text="Color" />
+                                    <TableColumn fx:id="pesoMascotas" prefWidth="45.0" text="Peso" />
+                                    <TableColumn fx:id="dueñoMascotas" prefWidth="97.0" text="Dueño" />
+                                </columns>
+                              </TableView>
+                              <Pane prefHeight="140.0" prefWidth="573.0">
+                                 <children>
+                                    <Button fx:id="botonAgregarMascota" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="69.0" mnemonicParsing="false" text="Agregar mascota" textAlignment="CENTER" />
+                                    <Button fx:id="botonEliminarMascota" layoutX="154.0" layoutY="69.0" mnemonicParsing="false" text="Eliminar mascota" />
+                                    <Button fx:id="botonActualizarMascota" layoutX="287.0" layoutY="69.0" mnemonicParsing="false" text="Actualizar mascota" />
+                                    <Button fx:id="botonBuscarMascota" layoutX="435.0" layoutY="69.0" mnemonicParsing="false" text="Buscar mascota" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="pestañaDueños" text="Dueños">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="349.0" prefWidth="573.0">
+                           <children>
+                              <TableView prefHeight="200.0" prefWidth="200.0">
+                                 <columns>
+                                    <TableColumn fx:id="nombreMascotas1" prefWidth="95.0" text="Nombre" />
+                                    <TableColumn fx:id="colorMascotas1" prefWidth="102.0" text="Apellido" />
+                                    <TableColumn fx:id="especieMascotas1" minWidth="0.0" prefWidth="100.0" text="ID" />
+                                    <TableColumn fx:id="razaMascotas1" prefWidth="102.0" text="Telefono" />
+                                    <TableColumn fx:id="edadMascotas1" prefWidth="44.0" text="Direccion" />
+                                    <TableColumn fx:id="edadMascotas12" prefWidth="129.0" text="Mascotas" />
+                                 </columns>
+                              </TableView>
+                              <Pane prefHeight="140.0" prefWidth="573.0">
+                                 <children>
+                                    <Button fx:id="botonAgregarDueño" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="69.0" mnemonicParsing="false" text="Agregar dueño" textAlignment="CENTER" />
+                                    <Button fx:id="botonEliminarDueño" layoutX="154.0" layoutY="69.0" mnemonicParsing="false" text="Eliminar dueño" />
+                                    <Button fx:id="botonActualizarDueño" layoutX="287.0" layoutY="69.0" mnemonicParsing="false" text="Actualizar dueño" />
+                                    <Button fx:id="botonBuscarDueño" layoutX="435.0" layoutY="69.0" mnemonicParsing="false" text="Buscar dueño" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="pestañaVeterinarios" text="Veterinarios">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="349.0" prefWidth="573.0">
+                           <children>
+                              <TableView prefHeight="200.0" prefWidth="200.0">
+                                 <columns>
+                                    <TableColumn fx:id="nombreMascotas11" prefWidth="105.0" text="Nombre" />
+                                    <TableColumn fx:id="colorMascotas11" prefWidth="111.0" text="Apellido" />
+                                    <TableColumn fx:id="especieMascotas11" minWidth="0.0" prefWidth="98.0" text="ID" />
+                                    <TableColumn fx:id="razaMascotas11" prefWidth="120.0" text="Telefono" />
+                                    <TableColumn fx:id="edadMascotas11" prefWidth="138.0" text="Direccion" />
+                                 </columns>
+                              </TableView>
+                              <Pane prefHeight="140.0" prefWidth="573.0">
+                                 <children>
+                                    <Button fx:id="botonAgregarDueño1" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="28.0" layoutY="69.0" mnemonicParsing="false" text="Agregar dueño" textAlignment="CENTER" />
+                                    <Button fx:id="botonEliminarDueño1" layoutX="154.0" layoutY="69.0" mnemonicParsing="false" text="Eliminar dueño" />
+                                    <Button fx:id="botonActualizarDueño1" layoutX="287.0" layoutY="69.0" mnemonicParsing="false" text="Actualizar dueño" />
+                                    <Button fx:id="botonBuscarDueño1" layoutX="435.0" layoutY="69.0" mnemonicParsing="false" text="Buscar dueño" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

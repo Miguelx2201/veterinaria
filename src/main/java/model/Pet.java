@@ -1,16 +1,19 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Pet {
-    private String id;
     private String name;
+    private String id;
     private String species;
     private String breed;
     private byte age;
     private String color;
     private double weight;
-    private String[] listDiseases;
+    private Owner owner;
+    private ArrayList<Appointment> listAppointments;
+
 
     public Pet(String id, String name, String species, String breed, byte age, String color, double weight) {
         this.id = id;
@@ -20,8 +23,7 @@ public class Pet {
         this.age = age;
         this.color = color;
         this.weight = weight;
-        this.listDiseases = new String[5];
-    }
+        }
 
     public String getId() {
         return id;
@@ -79,14 +81,6 @@ public class Pet {
         this.weight = weight;
     }
 
-    public String[] getListDiseases() {
-        return listDiseases;
-    }
-
-    public void setListDiseases(String[] listDiseases) {
-        this.listDiseases = listDiseases;
-    }
-
     @Override
     public String toString() {
         return "Pet" +
@@ -96,32 +90,8 @@ public class Pet {
                 "\nBreed: " + breed +
                 "\nAge: " + age +
                 "\nColor: " + color +
-                "\nWeight: " + weight +
-                "\nDiseases: " + Arrays.toString(listDiseases);
+                "\nWeight: " + weight;
     }
 
-    /**
-     * Metodo que añade una enfermedad a una mascota
-     * @param diseases
-     * @param index
-     * @return
-     */
-    public String addDiseases(String diseases, int index) {
-        String result = "";
-        listDiseases[index-1] = diseases;
-        result = "Enfermedad numero "+index+" ha sido añadida exitosamente";
-        return result;
-    }
-    public String addDiseases(String diseases) {
-        String result = "";
-        for(int i = 0; i<listDiseases.length; i++){
-            if (this.listDiseases[i] == null) {
-                this.listDiseases[i] = diseases;
-                result = "Enfermedad añadida exitosamente";
-                break;
-            }
-        }
-        return result;
-    }
 
 }
