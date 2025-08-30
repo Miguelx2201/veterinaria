@@ -10,8 +10,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/Pets.fxml"));
-
+        Parent root = FXMLLoader.load(getClass().getResource("/MainInterface.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Mi App con FXML y Maven");

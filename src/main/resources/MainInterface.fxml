@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.MainInterface">
+   <children>
+      <TitledPane animated="false" layoutX="-1.0" layoutY="-2.0" prefHeight="400.0" prefWidth="600.0" text="Gestion veterinaria">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="368.0" prefWidth="513.0">
+               <children>
+                  <Label layoutX="38.0" layoutY="35.0" text="Bienvenido, a continuacion seleccione la accion que desea realizar">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <VBox alignment="CENTER" layoutX="204.0" layoutY="84.0" prefHeight="200.0" prefWidth="190.0">
+                     <children>
+                        <Button fx:id="botonGestionCitas" mnemonicParsing="false" onAction="#gestionCitas" text="Gestion de citas" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
