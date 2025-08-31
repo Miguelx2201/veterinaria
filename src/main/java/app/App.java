@@ -1,22 +1,19 @@
 package app;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import util.ScreenManager;
 
 public class App extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/MainInterface.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Mi App con FXML y Maven");
-        primaryStage.show();
+    public void start(Stage stage) throws Exception {
+        ScreenManager.setStage(stage);
+        ScreenManager.addScreen("main", "/MainInterface.fxml");
+        ScreenManager.setScreen("main");
     }
 
-    public static void main(String[] args) {launch(args);
+    public static void main(String[] args) {
+        launch(args);
     }
 }
