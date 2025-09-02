@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="viewController.VetsController"
+      spacing="10" style="-fx-padding:12;">
+
+    <HBox spacing="8">
+        <children>
+            <TextField fx:id="txtBuscar" promptText="Buscar por nombre, apellido, ID o especialidad"/>
+            <Button text="Filtrar" onAction="#filtrar"/>
+            <Button text="Limpiar" onAction="#limpiarFiltros"/>
+        </children>
+    </HBox>
+
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="140"/>
+            <TableColumn fx:id="colApellido" text="Apellido" prefWidth="140"/>
+            <TableColumn fx:id="colId" text="ID" prefWidth="120"/>
+            <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="140"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+            <TableColumn fx:id="colDireccion" text="Dirección" prefWidth="200"/>
+            <TableColumn fx:id="colTarjeta" text="Tarjeta" prefWidth="120"/>
+            <TableColumn fx:id="colAnios" text="Años Exp." prefWidth="90"/>
+            <TableColumn fx:id="colEspecialidad" text="Especialidad" prefWidth="160"/>
+        </columns>
+    </TableView>
+
+    <GridPane hgap="10" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="18"/>
+            <ColumnConstraints percentWidth="32"/>
+            <ColumnConstraints percentWidth="18"/>
+            <ColumnConstraints percentWidth="32"/>
+        </columnConstraints>
+
+        <children>
+            <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="fNombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Apellido:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="fApellido" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+            <Label text="ID:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="fId" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Teléfono:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <TextField fx:id="fTelefono" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+            <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="fEmail" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+            <Label text="Dirección:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="fDireccion" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+            <Label text="Tarjeta:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="fTarjeta" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Años Exp.:" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+            <TextField fx:id="fAnios" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+
+            <Label text="Especialidad:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="fEspecialidad" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <HBox spacing="8" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.columnSpan="3">
+                <children>
+                    <Button text="Nuevo" onAction="#nuevo"/>
+                    <Button text="Agregar" onAction="#agregar"/>
+                    <Button fx:id="btnActualizar" text="Guardar cambios" onAction="#guardarCambios"/>
+                    <Button text="Eliminar" onAction="#eliminar"/>
+                </children>
+            </HBox>
+        </children>
+    </GridPane>
+</VBox>

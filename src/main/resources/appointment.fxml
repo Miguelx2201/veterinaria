@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="viewController.AppointmentController"
+      spacing="10" style="-fx-padding:12;">
+
+    <!-- Filtros -->
+    <HBox spacing="8">
+        <children>
+            <DatePicker fx:id="filtroFecha" promptText="Fecha"/>
+            <ComboBox fx:id="filtroEstado" promptText="Estado"/>
+            <Button text="Filtrar" onAction="#filtrar"/>
+            <Button text="Limpiar" onAction="#limpiarFiltros"/>
+        </children>
+    </HBox>
+
+    <!-- Tabla -->
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colFecha" text="Fecha" prefWidth="120"/>
+            <TableColumn fx:id="colHora" text="Hora" prefWidth="80"/>
+            <TableColumn fx:id="colMascota" text="Mascota" prefWidth="160"/>
+            <TableColumn fx:id="colVet" text="Veterinario" prefWidth="200"/>
+            <TableColumn fx:id="colMotivo" text="Motivo" prefWidth="220"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="120"/>
+            <TableColumn fx:id="colCosto" text="Costo" prefWidth="90"/>
+            <TableColumn fx:id="colDuracion" text="Duración" prefWidth="90"/>
+        </columns>
+    </TableView>
+
+    <!-- Formulario -->
+    <GridPane hgap="10" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="18"/>
+            <ColumnConstraints percentWidth="32"/>
+            <ColumnConstraints percentWidth="18"/>
+            <ColumnConstraints percentWidth="32"/>
+        </columnConstraints>
+
+        <children>
+            <Label text="Fecha:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="fFecha" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Hora (HH:mm):" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="fHora" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+            <Label text="Mascota:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="fMascota" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Veterinario:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <ComboBox fx:id="fVeterinario" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+            <Label text="Motivo:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="fMotivo" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+            <Label text="Observación:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="fObs" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="3"/>
+
+            <Label text="Estado:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="fEstado" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Costo:" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+            <TextField fx:id="fCosto" GridPane.rowIndex="4" GridPane.columnIndex="3"/>
+
+            <Label text="Duración (min):" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="fDuracion" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <HBox spacing="8" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.columnSpan="3">
+                <children>
+                    <Button text="Nuevo" onAction="#nuevo"/>
+                    <Button text="Agregar" onAction="#agregar"/>
+                    <Button fx:id="btnActualizar" text="Guardar cambios" onAction="#guardarCambios"/>
+                    <Button text="Eliminar" onAction="#eliminar"/>
+                </children>
+            </HBox>
+        </children>
+    </GridPane>
+</VBox>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="viewController.MainInterface">
+
+    <top>
+        <VBox>
+            <MenuBar>
+                <menus>
+                    <Menu text="Archivo">
+                        <items>
+                            <MenuItem text="Guardar"    onAction="#guardar"/>
+                            <SeparatorMenuItem/>
+                            <MenuItem text="Salir"      onAction="#salir"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Ver">
+                        <items>
+                            <MenuItem text="Mascotas"      onAction="#goMascotas"/>
+                            <MenuItem text="Propietarios"  onAction="#goPropietarios"/>
+                            <MenuItem text="Citas"         onAction="#goCitas"/>
+                            <MenuItem text="Veterinarios"  onAction="#goVeterinarios"/>
+                        </items>
+                    </Menu>
+                    <Menu text="Ayuda">
+                        <items>
+                            <MenuItem text="Acerca de" onAction="#acercaDe"/>
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+            <ToolBar>
+                <Button text="Mascotas"      onAction="#goMascotas"/>
+                <Button text="Propietarios"  onAction="#goPropietarios"/>
+                <Button text="Citas"         onAction="#goCitas"/>
+                <Button text="Veterinarios"  onAction="#goVeterinarios"/>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <!-- Aquí se cargan las vistas hijas -->
+        <StackPane fx:id="contentRoot"/>
+    </center>
+
+    <bottom>
+        <HBox spacing="12" style="-fx-padding:6 10;">
+            <children>
+                <Label fx:id="statusLabel" text="Listo"/>
+                <ProgressBar fx:id="statusProgress" prefWidth="160" visible="false"/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

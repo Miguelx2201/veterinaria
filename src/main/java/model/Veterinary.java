@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Optional;
 
 public class Veterinary {
@@ -20,6 +21,13 @@ public class Veterinary {
         this.phone = phone;
         this.email = email;
         this.nit = nit;
+        this.listPets = new ArrayList<>();
+        this.listOwners = new ArrayList<>();
+        this.listAppointments = new ArrayList<>();
+        this.listVeterinarians = new ArrayList<>();
+    }
+
+    public Veterinary() {
         this.listPets = new ArrayList<>();
         this.listOwners = new ArrayList<>();
         this.listAppointments = new ArrayList<>();
@@ -51,6 +59,7 @@ public class Veterinary {
     }
 
     public ArrayList<Pet> getListPets() {
+        if(listPets == null) listPets = new ArrayList<>();
         return listPets;
     }
 
@@ -75,6 +84,7 @@ public class Veterinary {
     }
 
     public ArrayList<Owner> getListOwners() {
+        if(listOwners == null) listOwners = new ArrayList<>();
         return listOwners;
     }
 
@@ -83,6 +93,7 @@ public class Veterinary {
     }
 
     public ArrayList<Appointment> getListAppointments() {
+        if(listAppointments == null) listAppointments = new ArrayList<>();
         return listAppointments;
     }
 
@@ -91,6 +102,7 @@ public class Veterinary {
     }
 
     public ArrayList<Veterinarian> getListVeterinarians() {
+        if(listVeterinarians == null) listVeterinarians = new ArrayList<>();
         return listVeterinarians;
     }
 
@@ -114,6 +126,11 @@ public class Veterinary {
     }
     public String removePet(String id) {
         boolean remove = listPets.removeIf(pet -> pet.getId().equals(id));
+        if(remove) return "Pet has been removed successfully.";
+        else return "Pet not found.";
+    }
+    public String removePet(Pet petRemove) {
+        boolean remove = listPets.removeIf(pet -> pet.equals(petRemove));
         if(remove) return "Pet has been removed successfully.";
         else return "Pet not found.";
     }
