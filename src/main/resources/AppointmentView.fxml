@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.AppointmentController">
+    <center>
+        <TableView fx:id="tableAppointments">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" />
+                <TableColumn fx:id="colStatus" text="Estado" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <children>
+                <TextField fx:id="txtId" promptText="ID" />
+                <DatePicker fx:id="dpDate" />
+                <TextField fx:id="txtTime" promptText="Hora" />
+                <ChoiceBox fx:id="cbStatus" />
+                <Button fx:id="btnAdd" text="Agregar" onAction="#addAppointment" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

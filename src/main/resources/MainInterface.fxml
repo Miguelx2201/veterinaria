@@ -32,11 +32,13 @@
             </MenuBar>
          </top>
          <center>
-            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="botonGestionarCitas" mnemonicParsing="false" onAction="#gestionCitas" text="Gestionar Citas" />
+                  <Button fx:id="botonGestionarMascotas" mnemonicParsing="false" onAction="#gestionMascotas" text="Gestionar Mascotas" />
+               </children>
+            </VBox>
          </center>
-         <left>
-            <ListView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-         </left>
       </BorderPane>
    </children>
 </AnchorPane>

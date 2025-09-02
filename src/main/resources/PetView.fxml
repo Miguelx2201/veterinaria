@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewController.PetController">
+    <center>
+        <TableView fx:id="tablePets">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" />
+                <TableColumn fx:id="colName" text="Nombre" />
+                <TableColumn fx:id="colSpecies" text="Especie" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <children>
+                <TextField fx:id="txtId" promptText="ID" />
+                <TextField fx:id="txtName" promptText="Nombre" />
+                <ChoiceBox fx:id="cbSpecies" />
+                <Button fx:id="btnAdd" text="Agregar" onAction="#addPet" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

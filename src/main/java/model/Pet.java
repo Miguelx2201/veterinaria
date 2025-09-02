@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Pet {
     private String name;
     private String id;
-    private String species;
+    private Species species;
     private String breed;
     private byte age;
     private String color;
@@ -15,7 +15,7 @@ public class Pet {
     private ArrayList<Appointment> listAppointments;
 
 
-    public Pet(String id, String name, String species, String breed, byte age, String color, double weight) {
+    public Pet(String id, String name, Species species, String breed, byte age, String color, double weight) {
         this.id = id;
         this.name = name;
         this.species = species;
@@ -41,11 +41,11 @@ public class Pet {
         this.name = name;
     }
 
-    public String getSpecies() {
+    public Species getSpecies() {
         return species;
     }
 
-    public void setSpecies(String species) {
+    public void setSpecies(Species species) {
         this.species = species;
     }
 
