@@ -53,9 +53,9 @@ public class VetsController {
         tabla.getSelectionModel().selectedItemProperty().addListener((obs, old, sel) -> {
             seleccion = sel;
             if (sel != null) cargarFormulario(sel); else limpiarFormulario();
-            if (btnActualizar != null) btnActualizar.setDisable(sel == null);
+            if (btnActualizar != null) btnActualizar.setDisable(sel == null);//Esto no lo hice en PetController
         });
-        if (btnActualizar != null) btnActualizar.setDisable(true);
+        if (btnActualizar != null) btnActualizar.setDisable(true); //Esto tampoco
     }
 
     // Acciones
