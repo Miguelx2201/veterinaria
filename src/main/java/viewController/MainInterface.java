@@ -33,8 +33,8 @@ public class MainInterface {
         // Ruta al FXML de mascotas. Ajusta si tu archivo se llama diferente:
         loadIntoCenter("/pets.fxml", controller -> {
             // Inyecta la instancia de Veterinary en el PetController
-            if (controller instanceof PetController pc) {
-                pc.setVeterinaria(veterinaria);
+            if (controller instanceof viewController.PetController pc) {
+                pc.setVeterinary(veterinaria);
             }
         });
     }

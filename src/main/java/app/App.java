@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/mainInterface.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/MainInterface.fxml"));
         Scene scene = new Scene(root, 1000, 650);
         stage.setTitle("Gestión Veterinaria");
         stage.setScene(scene);

@@ -22,7 +22,15 @@ public class Pet {
         this.age = age;
         this.color = color;
         this.weight = weight;
-        }
+    }
+
+    public Pet(String name, Species species, String breed, byte age, Owner owner) {
+        this.name = name;
+        this.species = species;
+        this.breed = breed;
+        this.age = age;
+        this.owner = owner;
+    }
 
     public String getId() {
         return id;

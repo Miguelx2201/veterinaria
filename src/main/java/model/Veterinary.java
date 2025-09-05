@@ -134,8 +134,8 @@ public class Veterinary {
         if(remove) return "Pet has been removed successfully.";
         else return "Pet not found.";
     }
-    public String updatePet(Pet pet) {
-        Optional<Pet> foundPet = searchPet(pet.getId());
+    public String updatePet(String id, Pet pet) {
+        Optional<Pet> foundPet = searchPet(id);
         if(foundPet.isPresent()) {
             listPets.remove(foundPet.get());
             listPets.add(pet);
