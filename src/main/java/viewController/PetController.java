@@ -17,8 +17,8 @@ public class PetController {
     @FXML private TextField textoBuscar;
     @FXML private TableView<Pet> tabla;
     @FXML private TableColumn<Pet, String> columnaEspecie, columnaNombre, columnaRaza, columnaEdad,
-    columnaPropietario, columnaCitas;
-    @FXML private TextField ingresarNombre, ingresarRaza, ingresarEdad;
+    columnaPropietario, columnaCitas, columnaId;
+    @FXML private TextField ingresarNombre, ingresarRaza, ingresarEdad, ingresarId;
     @FXML private ComboBox<Species> elegirEspecie;
     @FXML private ComboBox<Owner> elegirPropietario;
 
@@ -54,8 +54,9 @@ public class PetController {
         columnaEspecie.setCellValueFactory(c -> new ReadOnlyStringWrapper(String.valueOf(c.getValue().getSpecies())));
         columnaRaza.setCellValueFactory(c -> new ReadOnlyStringWrapper(safe(c.getValue().getBreed())));
         columnaEdad.setCellValueFactory(c -> new ReadOnlyStringWrapper(String.valueOf(c.getValue().getAge())));
-        columnaPropietario.setCellValueFactory(c -> new ReadOnlyStringWrapper(String.valueOf(c.getValue().getOwner())));
+        columnaPropietario.setCellValueFactory(c -> new ReadOnlyStringWrapper(String.valueOf(c.getValue().getOwner().getName())));
         columnaCitas.setCellValueFactory(c -> new ReadOnlyStringWrapper(String.valueOf(c.getValue().getListAppointments())));
+        columnaId.setCellValueFactory(c -> new ReadOnlyStringWrapper(safe(c.getValue().getId())));
 
         tabla.setItems(filteredList);
         tabla.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, pet) -> {
@@ -73,6 +74,7 @@ public class PetController {
             || lower(pet.getBreed()).contains(t)
             || lower(pet.getOwner().getName()).contains(t)
             || lower(String.valueOf(pet.getAge())).contains(t)
+            || lower(pet.getId()).contains(t)
         );
     }
 
@@ -96,7 +98,8 @@ public class PetController {
                 elegirEspecie.getValue(),
                 ingresarRaza.getText(),
                 age,
-                elegirPropietario.getValue()
+                elegirPropietario.getValue(),
+                ingresarId.getText()
         );
         String mensaje = veterinary.addPet(pet);
         info(mensaje);
@@ -118,15 +121,15 @@ public class PetController {
                 elegirEspecie.getValue(),
                 ingresarRaza.getText(),
                 age,
-                elegirPropietario.getValue()
+                elegirPropietario.getValue(),
+                ingresarId.getText()
         );
         String idEditar = seleccion.getId();
         String mensaje = veterinary.updatePet(idEditar, petUpdate);
         info(mensaje);
         if(mensaje.contains("success")) {
-            observableList.add(petUpdate);
             int indice = observableList.indexOf(seleccion);
-            if( indice >= 0) observableList.set(indice, petUpdate);
+            observableList.set(indice, petUpdate);
             tabla.getSelectionModel().clearSelection();
             limpiarFormulario();
         }
@@ -159,12 +162,13 @@ public class PetController {
         ingresarRaza.clear();
         ingresarEdad.clear();
         elegirPropietario.setValue(null);
+        ingresarId.clear();
     }
     private boolean validarCrear() {
-        return !(isEmpty(ingresarNombre.getText())||isEmpty(ingresarRaza.getText())||Integer.parseInt(ingresarEdad.getText())<0);
+        return !(isEmpty(ingresarNombre.getText())||isEmpty(ingresarRaza.getText())||parseIntSafe(ingresarEdad.getText(),-1)<0||veterinary.searchPet(ingresarId.getText()).isPresent());
     }
     private boolean validarEditar() {
-        return !(isEmpty(ingresarNombre.getText())||isEmpty(ingresarRaza.getText())||Integer.parseInt(ingresarEdad.getText())<0);
+        return !(isEmpty(ingresarNombre.getText())||isEmpty(ingresarRaza.getText())||parseIntSafe(ingresarEdad.getText(),-1)<0||veterinary.searchPet(ingresarId.getText()).isPresent());
     }
 
     //Metodos helpers
@@ -182,6 +186,13 @@ public class PetController {
     }
     private boolean isEmpty(String text) {
         return text == null || text.trim().isEmpty();
+    }
+    private int parseIntSafe(String text, int defaultValue) {
+        try {
+            return Integer.parseInt(text);
+        } catch (Exception e) {
+            return defaultValue;
+        }
     }
 
 

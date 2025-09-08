@@ -24,12 +24,13 @@ public class Pet {
         this.weight = weight;
     }
 
-    public Pet(String name, Species species, String breed, byte age, Owner owner) {
+    public Pet(String name, Species species, String breed, byte age, Owner owner, String id) {
         this.name = name;
         this.species = species;
         this.breed = breed;
         this.age = age;
         this.owner = owner;
+        this.id = id;
     }
 
     public String getId() {
